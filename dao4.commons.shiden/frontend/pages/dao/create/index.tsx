@@ -6,6 +6,9 @@ import MintNFT from "@/components/MintNFT";
 import RegisterToMasterDao from "@/components/RegisterToMasterDao";
 import Link from "next/link";
 import { useState } from "react";
+import { DfCHeader } from "../../../components/DfCHeader";
+import { DfCFooter } from "../../../components/DfCFooter";
+import { ShowStepbar } from "@/components/ShowStepbar";
 
 const CreateDAO = () => {
   const [showDeployNft, setShowDeployNft] = useState(false);
@@ -32,6 +35,8 @@ const CreateDAO = () => {
 
   return (
     <>
+    <ShowStepbar/>
+    <DfCHeader/>
       <div className="bg-black flex flex-col min-h-screen">
         <div className="m-5 text-25px text-left text-white underline leading-none tracking-tight">
           <Link href="/">Back to Top</Link>
@@ -193,9 +198,12 @@ const CreateDAO = () => {
                 ></AddFirstMember>
               )}
             </div>
+              {checkAddFirstMember!==false
+                }
           </table>
         </div>
       </div>
+      <DfCFooter/>
     </>
   );
 };

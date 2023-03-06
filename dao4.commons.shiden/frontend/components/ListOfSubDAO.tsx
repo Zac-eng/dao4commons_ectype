@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  SubDAOData,
   SubDAODataWithMemberFlg,
 } from "../dao4.frontend.common/types/SubDaoType";
 import {
@@ -13,6 +12,7 @@ import Donate from "@/dao4.frontend.common/components/Donate";
 import { TargetDaoKind } from "@/dao4.frontend.common/types/MasterDaoType";
 import TokenList from "./TokenList";
 import { Text } from "@mantine/core";
+
 
 const ListOfSubDAO = () => {
   const [subDaoList, setSubDaoList] =
@@ -30,7 +30,7 @@ const ListOfSubDAO = () => {
     ownerAddress: "",
     isMember: false,
   });
-  const [NoDao, setNoDao] = useState(false);
+  const [DaoNum, setDaoNum] = useState<number|undefined>(0);
 
   const getSubDaoList = async () => {
     //console.log("## getSubDaoList call 1");
@@ -41,12 +41,17 @@ const ListOfSubDAO = () => {
     const list = await listSubDAO(masterDaoAddress);
     const result = await getDaoListOfAffiliation(memberManagerAddress, list);
     setSubDaoList(result);
-    setNoDao(typeof subDaoList == "undefined")
+    setDaoNum(subDaoList?.length);
+    console.log(subDaoList);
+    console.log(typeof subDaoList);
+    console.log("Hi %s",subDaoList?.length);
   };
+
 
   useEffect(() => {
     getSubDaoList();
-  }, []);
+    console.log("Yes %s", typeof subDaoList);
+  },[]);
 
   const showSettingAndSelectDAO = (
     _showList: boolean,
@@ -58,6 +63,7 @@ const ListOfSubDAO = () => {
     showSetting(_showList, _showListButton, _showDonate, _showTokens);
     setSelectDao(_selectDao);
   };
+
 
   const showSetting = (
     _showList: boolean,
@@ -71,17 +77,17 @@ const ListOfSubDAO = () => {
     setShowDonate(_showDonate);
     setShowTokens(_showTokens);
   };
-  if (NoDao == true) {
-    return (
-      <>
-      <div style={{"color":"white", "textAlign":"center"}}>
-        <Text style={{"fontFamily":"Gill sans", "fontSize":150}}>
-          No DAO exists
-        </Text>
-      </div>
-      </>
-    )
-  } else {
+  // if (DaoNum == 0) {
+  //   return (
+  //     <>
+  //     <div style={{"color":"white", "textAlign":"center"}}>
+  //       <Text style={{"fontFamily":"Gill sans", "fontSize":150}}>
+  //         No DAO exists
+  //       </Text>
+  //     </div>
+  //     </>
+  //   )
+  // } else {
     return (
       <>
         <div className="p-2 flex flex-wrap justify-center mx-1 lg:-mx-4">
@@ -93,11 +99,21 @@ const ListOfSubDAO = () => {
               Back To DAO List
             </button>
           )}
+        git  
         </div>
+        {showList == true && subDaoList?.length == 0 && (
+          <div className="p-2 flex flex-wrap justify-center mx-1 lg:-mx-4">
+            <Text style={{"color":"white","fontFamily":"Gill sans", "fontSize":150}}>
+              No DAO exists
+            </Text>
+          </div>
+        )}
+
         {showList == true && (
           <div className="p-2 flex flex-wrap justify-center mx-1 lg:-mx-4">
             {typeof subDaoList !== "undefined"
               ? subDaoList.map((subDao) => {
+                console.log("Here,%d",subDaoList.length);
                   return (
                     <div key={subDao.daoName}>
                       <div className="m-5  max-w-sm rounded overflow-hidden shadow-lg bg-black border-4 border-white">
@@ -181,6 +197,7 @@ const ListOfSubDAO = () => {
         )}
       </>
     );
-  }
-}
+  } 
+// }
 export default ListOfSubDAO;
+

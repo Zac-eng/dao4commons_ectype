@@ -1,7 +1,7 @@
 import { Header } from '@mantine/core';
 import { Aperture } from "react-feather";
 
-export function MtHeader() {
+export function DfCHeader() {
   return (
     <Header height={70} style={{"backgroundColor":"grey", "color":"white", "fontFamily":"Gill sans"}}>
         <div style={{"display":"flex","flexDirection":"row", "justifyContent":"center", "verticalAlign":"center"}}>

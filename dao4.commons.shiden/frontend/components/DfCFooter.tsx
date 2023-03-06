@@ -28,7 +28,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function MtFooter() {
+export function DfCFooter() {
   const { classes } = useStyles();
 
   return (

@@ -1,11 +1,10 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ListOfSubDAO from "../components/ListOfSubDAO";
-import { MtHeader } from "@/components/MantineHeader";
-import { LeadGrid } from "../components/LeadGrid";
-import { MtFooter } from "@/components/MantineFooter";
+import { DfCHeader } from "../components/DfCHeader";
+import { DfCFooter } from "../components/DfCFooter";
 
 const Home = () => {
   const connectWallet = async () => {
@@ -17,13 +16,14 @@ const Home = () => {
     }
   };
 
+  const [NoDao, setNoDao] = useState(false);
   useEffect(() => {
     connectWallet();
   }, []);
 
   return (
     <>
-      <MtHeader />
+      <DfCHeader />
       <div className="bg-black flex flex-col min-h-screen">
         <div className="text-center text-100px font-extrabold leading-none tracking-tight">
           <div className="p-3"></div>
@@ -45,9 +45,8 @@ const Home = () => {
         </div>
 
       </div>
-      <MtFooter />
+      <DfCFooter />
     </>
   );
 };
 export default Home;
-
