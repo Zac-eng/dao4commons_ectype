@@ -7,6 +7,7 @@ interface DeployDaoParameter {
   setCheckDeployDao: (flg: boolean) => void;
   setDaoAddress: (address: string) => void;
   setDaoValue: (daoValue:SubDAODeployFormData) => void;
+  setShowRegisterDao: (flg: boolean) => void;
 }
 
 const DeployDAO = (props: DeployDaoParameter) => {
@@ -44,6 +45,7 @@ const DeployDAO = (props: DeployDaoParameter) => {
       await deploySubDAO(daoValue, memberManagerAddress, proposalManagerAddress, props.setDaoAddress, props.setCheckDeployDao)
     );
     props.setDaoValue(daoValue);
+    props.setShowRegisterDao(true);
   };
 
   return (

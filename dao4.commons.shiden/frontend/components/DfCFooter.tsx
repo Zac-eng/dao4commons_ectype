@@ -18,7 +18,8 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan('xs')]: {
       flexDirection: 'column',
-    },
+    }
+    
   },
 
   links: {
@@ -32,7 +33,7 @@ export function DfCFooter() {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.footer}>
+    <div className="bg-white font-sans">
       <Container className={classes.inner}>
         <Text color="dimmed" size="sm">
           © 2023 realtakahashi.inc All rights reserved.

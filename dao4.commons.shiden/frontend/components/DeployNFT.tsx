@@ -5,6 +5,8 @@ import { deployMemberNFT } from "../dao4.frontend.common/contracts/member_nft_ap
 interface FinishMintSetting {
   setCheckDeployNft: (flg: boolean) => void;
   setNftAddress:(value: string) => void;
+  setShowDeployNft:(flg: boolean) => void;
+  setShowMintNft:(flg: boolean) => void;
 }
 
 const DeployNFT = (props:FinishMintSetting) => {
@@ -26,6 +28,8 @@ const DeployNFT = (props:FinishMintSetting) => {
     event.preventDefault();
     const result = await deployMemberNFT(nftValue,props.setNftAddress,props.setCheckDeployNft);
     setNftAddress(result);
+    props.setShowDeployNft(false);
+    props.setShowMintNft(true);
     console.log("#### nftAddress",nftAddress);
   };
 

@@ -1,6 +1,6 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import ListOfSubDAO from "../components/ListOfSubDAO";
 import { DfCHeader } from "../components/DfCHeader";
@@ -16,15 +16,15 @@ const Home = () => {
     }
   };
 
-  const [NoDao, setNoDao] = useState(false);
   useEffect(() => {
     connectWallet();
   }, []);
 
   return (
     <>
+      <div className="bg-black flex flex-col">
       <DfCHeader />
-      <div className="bg-black flex flex-col min-h-screen">
+      <main className="min-h-[85vh]">
         <div className="text-center text-100px font-extrabold leading-none tracking-tight">
           <div className="p-3"></div>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-red-500" style={{"fontFamily":"Gill sans"}}>
@@ -43,9 +43,10 @@ const Home = () => {
             <Link href="dao/burn/">Burn Member NFT</Link>
           </button>
         </div>
-
+      </main>
+      <DfCFooter/>
       </div>
-      <DfCFooter />
+
     </>
   );
 };

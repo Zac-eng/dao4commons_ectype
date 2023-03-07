@@ -6,6 +6,7 @@ interface FinishMintSetting {
   setTokenId: (id: string) => void;
   setTokenAddress:(tokenAddress:string) => void;
   nftAddress: string;
+  setShowDeployDao: (flg: boolean) => void;
 }
 
 const MintNFT = (props: FinishMintSetting) => {
@@ -19,6 +20,7 @@ const MintNFT = (props: FinishMintSetting) => {
     await mintMemberNFT(tmpAddress, props.setTokenId, props.setCheckMintNft);
     props.setCheckMintNft(true);
     props.setTokenAddress(tmpAddress);
+    props.setShowDeployDao(true);
   };
 
   return (
