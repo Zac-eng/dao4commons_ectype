@@ -33,7 +33,7 @@ export function DfCFooter() {
   const { classes } = useStyles();
 
   return (
-    <div className="bg-white font-sans">
+    <div className="bg-white">
       <Container className={classes.inner}>
         <Text color="dimmed" size="sm">
           © 2023 realtakahashi.inc All rights reserved.

@@ -112,9 +112,9 @@ const DeployDAO = (props: DeployDaoParameter) => {
             Submit
           </button>
         </div>
-        <div className="m-5 text-center text-orange-400 text-20px">
+        {/* <div className="m-5 text-center text-orange-400 text-20px">
           Your DAO Address is : {daoAddress}
-        </div>
+        </div> */}
       </form>
       <div className="p-5"></div>
     </>
