@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { DfCHeader } from "../../../components/DfCHeader";
 import { DfCFooter } from "../../../components/DfCFooter";
+import { BackTopButton } from "@/components/BackTopButton";
 
 import { AppShell, Navbar, Group} from '@mantine/core';
 
@@ -39,7 +40,7 @@ const CreateDAO = () => {
 
   return (
     <>
-      <AppShell className="bg-black max-h-[95vh]"
+      <AppShell className="bg-black h-fit"
         navbar={<Navbar className="bg-black max-h-[75vh]" width={{ sm: 500 }} p="md">
           {<>
       <Navbar.Section className="flex flex-col">
@@ -71,7 +72,7 @@ const CreateDAO = () => {
                 </td>
               )}
           </tr>
-
+        
       <tr className="text-30px">
               {showMintNft == true && checkMintNft == false && (
                 <td className="text-center">
@@ -166,11 +167,7 @@ const CreateDAO = () => {
               )}
             </tr>
       </Navbar.Section>
-      <Group className="text-white text-30px" position="apart" style={{"fontFamily":"Gill sans"}}>
-        <button className="m-5 px-6 px-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500">
-          <Link href="/">Back to Top</Link>
-        </button>  
-        </Group>
+      <BackTopButton/>
           </>}
         </Navbar>}
          header={<DfCHeader/>}>
@@ -249,7 +246,7 @@ const CreateDAO = () => {
             </div>
             <div>
               {checkAddFirstMember == true && (
-                <div className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-red-500 flex flex-col" style={{"fontFamily":"Gill sans"}}>
+                <div className="bg-clip-text text-transparent text-center bg-gradient-to-r from-yellow-300 to-red-500 flex flex-col" style={{"fontFamily":"Gill sans"}}>
                 <td className="text-100px">
                 congratulations!
                </td>
@@ -264,7 +261,7 @@ const CreateDAO = () => {
             </div>
               {checkAddFirstMember!==false
                 }
-            <div className="absolute right-0 bottom-20">
+            <div className="">
               <p className="m-5 text-center text-orange-400 text-20px">Your NFT Address is : {nftAddress}</p>
               <p className="m-5 text-center text-orange-400 text-20px">Your DAO Address is : {daoAddress}</p>
             </div>

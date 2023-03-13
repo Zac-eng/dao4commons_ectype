@@ -9,6 +9,9 @@ import Donate from "@/dao4.frontend.common/components/Donate";
 import { TargetDaoKind } from "@/dao4.frontend.common/types/MasterDaoType";
 import Divide from "@/dao4.frontend.common/components/Divide";
 import MemberNFTAddress from "@/components/MemberNFTAddress";
+import { DfCHeader } from "@/components/DfCHeader";
+import { DfCFooter } from "@/components/DfCFooter";
+import { BackTopButton } from "@/components/BackTopButton";
 
 const DaoTop = () => {
   const router = useRouter();
@@ -36,17 +39,19 @@ const DaoTop = () => {
 
   return (
     <>
-      <div className="bg-black flex flex-col min-h-screen">
-        <div className="m-5 text-25px text-left text-white underline leading-none tracking-tight">
-          <Link href="/">Back to Top</Link>
-        </div>
+    <DfCHeader/>
+      <div className="bg-black flex flex-col min-h-[87vh]">
+        <BackTopButton/>
         <div className="text-center text-100px font-extrabold leading-none tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-100">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-100" style={{"fontFamily":"Gill sans"}}>
             {daoName}
           </span>
         </div>
         <div className="p-4 text-center">
           <DaoBalance daoAddress={subDAOaddress} isMasterDao={false}></DaoBalance>
+        </div>
+        <div className="p-4 text-center">
+          <p className="text-white text-20px">This DAO's Address: {subDAOaddress}</p>
         </div>
         <div className="p-4 text-center">
           <MemberNFTAddress daoAddress={subDAOaddress}></MemberNFTAddress>
@@ -97,6 +102,7 @@ const DaoTop = () => {
           <Divide  daoAddress={subDAOaddress} daoName={daoName} targetDaoKind={TargetDaoKind.NONE}></Divide>
         )}
       </div>
+    <DfCFooter/>
     </>
   );
 };

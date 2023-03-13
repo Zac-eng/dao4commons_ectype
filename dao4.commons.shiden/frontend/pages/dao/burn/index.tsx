@@ -1,7 +1,10 @@
 import AddMemberForDao from "@/components/AddMemberForDao";
+import { BackTopButton } from "@/components/BackTopButton";
 import MintNFT from "@/components/MintNFT";
 import { burnMemberNft } from "@/dao4.frontend.common/contracts/member_nft_api";
 import Link from "next/link";
+import { DfCHeader } from "@/components/DfCHeader";
+import { DfCFooter } from "@/components/DfCFooter";
 import { useState } from "react";
 
 const Burn = () => {
@@ -12,10 +15,9 @@ const Burn = () => {
   };
   return (
     <>
-      <div className="bg-black flex flex-col min-h-screen">
-        <div className="m-5 text-25px text-left text-white underline leading-none tracking-tight">
-          <Link href="/">Back to Top</Link>
-        </div>
+    <DfCHeader/>
+      <div className="bg-black flex flex-col min-h-[87vh]">
+      <BackTopButton/>
         <div className="text-30px text-center text-orange-200 leading-none tracking-tight">
           <p className="">You are going to burn your member NFT... </p>
         </div>
@@ -51,6 +53,7 @@ const Burn = () => {
             </div>
 
       </div>
+      <DfCFooter/>
     </>
   );
 };

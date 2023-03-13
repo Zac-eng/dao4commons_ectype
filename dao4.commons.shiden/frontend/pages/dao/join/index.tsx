@@ -1,4 +1,5 @@
 import AddMemberForDao from "@/components/AddMemberForDao";
+import { BackTopButton } from "@/components/BackTopButton";
 import { DfCFooter } from "@/components/DfCFooter";
 import { DfCHeader } from "@/components/DfCHeader";
 import MintNFT from "@/components/MintNFT";
@@ -29,7 +30,7 @@ const Join = () => {
             <tr className="text-30px">
               {checkMintNft == false && (
                 <td className="text-center">
-                  <p className="text-orange-200">&nbsp; &nbsp; 1.&nbsp; Mint your own NFT.</p>
+                  <p className="text-yellow-200">&nbsp; &nbsp; 1.&nbsp; Mint your own NFT.</p>
                 </td>
               )}
               {checkMintNft == true && (
@@ -52,7 +53,7 @@ const Join = () => {
             <tr className="text-30px">
               {showAddMember == true && checkAddMember == false && checkMintNft == true &&(
                 <td className="text-center">
-                  <p className="text-orange-500">&nbsp; &nbsp; 2.&nbsp; Add You 2 Member.</p>
+                  <p className="text-yellow-500">&nbsp; &nbsp; 2.&nbsp; Add You 2 Member.</p>
                 </td>
               )}
               {((showAddMember== false && checkMintNft == false ) || checkAddMember == true || checkMintNft == false) && (
@@ -72,11 +73,7 @@ const Join = () => {
               )}
             </tr>
           </Navbar.Section>
-            <Group className="text-white text-30px" position="apart" style={{"fontFamily":"Gill sans"}}>
-        <button className="m-5 px-6 px-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500">
-          <Link href="/">Back to Top</Link>
-        </button>  
-        </Group>
+          <BackTopButton/>
           </>}
         </Navbar>}
          header={<DfCHeader/>}>
@@ -180,7 +177,7 @@ const Join = () => {
               </div>
               <div>
               {checkAddMember == true && (
-                <div className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-red-500 flex flex-col" style={{"fontFamily":"Gill sans"}}>
+                <div className="bg-clip-text text-transparent text-center bg-gradient-to-r from-yellow-300 to-red-500 flex flex-col" style={{"fontFamily":"Gill sans"}}>
                 <td className="text-100px">
                 congratulations!
                </td>
