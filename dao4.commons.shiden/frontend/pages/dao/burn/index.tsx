@@ -18,6 +18,11 @@ const Burn = () => {
     <DfCHeader/>
       <div className="bg-black flex flex-col min-h-[87vh]">
       <BackTopButton/>
+      <div className="text-50px text-center text-yellow-300 leading-none tracking-tight">
+            <p>Attention!</p>
+            <p>You cannot revert this action</p>
+            <div className="p-3"></div>
+          </div>
         <div className="text-30px text-center text-orange-200 leading-none tracking-tight">
           <p className="">You are going to burn your member NFT... </p>
         </div>

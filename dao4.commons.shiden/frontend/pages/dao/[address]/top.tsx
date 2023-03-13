@@ -57,30 +57,71 @@ const DaoTop = () => {
           <MemberNFTAddress daoAddress={subDAOaddress}></MemberNFTAddress>
         </div>
         <div className="p-1 text-center text-25px">
-          <button 
+          {showMember==false && (
+            <button 
             className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500"
             onClick={()=>_setShow(!showMember,false,false,false)}
           >
             Members
           </button>
-          <button 
+          )}
+          {showMember==true && (
+            <button 
+            className="m-5 px-7 py-3 border-double border-white border-2 bg-white rounded text-black  hover:border-orange-500"
+            onClick={()=>_setShow(!showMember,false,false,false)}
+          >
+            Members
+          </button>
+          )}
+          {showProposal==false && (
+            <button 
             className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500"
             onClick={()=>_setShow(false,!showProposal,false,false)}
           >
             Proposals
           </button>
-          <button 
+          )}
+          {showProposal==true && (
+            <button 
+            className="m-5 px-7 py-3 border-double border-white border-2 bg-white rounded text-black  hover:border-orange-500"
+            onClick={()=>_setShow(false,!showProposal,false,false)}
+          >
+            Proposals
+          </button>
+          )}
+          {showDonate==false && (
+            <button 
             className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500"
             onClick={()=>_setShow(false,false,!showDonate,false)}
           >
             Donate
           </button>
-          <button 
+          )}
+          {showDonate==true && (
+            <button 
+            className="m-5 px-7 py-3 border-double border-white border-2 bg-white rounded text-black  hover:border-orange-500"
+            onClick={()=>_setShow(false,false,!showDonate,false)}
+          >
+            Donate
+          </button>
+          )}
+          {showDivide==false && (
+            <button 
             className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500"
             onClick={()=>_setShow(false,false,false,!showDivide)}
           >
             Divide
           </button>
+          )}
+          {showDivide==true && (
+            <button 
+            className="m-5 px-7 py-3 border-double border-white border-2 bg-white rounded text-black  hover:border-orange-500"
+            onClick={()=>_setShow(false,false,false,!showDivide)}
+          >
+            Divide
+          </button>
+          )}
+          
           <Link href={`/dao/${subDAOaddress}/tokens`}>
           <button
             className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500"

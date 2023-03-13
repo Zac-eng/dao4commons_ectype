@@ -40,7 +40,7 @@ const CreateDAO = () => {
 
   return (
     <>
-      <AppShell className="bg-black h-fit"
+      <AppShell className="bg-black min-h-screen"
         navbar={<Navbar className="bg-black max-h-[75vh]" width={{ sm: 500 }} p="md">
           {<>
       <Navbar.Section className="flex flex-col">
@@ -170,7 +170,8 @@ const CreateDAO = () => {
       <BackTopButton/>
           </>}
         </Navbar>}
-         header={<DfCHeader/>}>
+         header={<DfCHeader/>}
+         footer={<DfCFooter/>}>
 
          <table className="w-[100%]">
             <div>
@@ -267,7 +268,6 @@ const CreateDAO = () => {
             </div>
           </table>
         </AppShell>
-        <DfCFooter/>
     </>
   )
 };

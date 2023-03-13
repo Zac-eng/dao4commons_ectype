@@ -3,7 +3,7 @@ import { BackTopButton } from "@/components/BackTopButton";
 import { DfCFooter } from "@/components/DfCFooter";
 import { DfCHeader } from "@/components/DfCHeader";
 import MintNFT from "@/components/MintNFT";
-import { AppShell, Group, Navbar } from "@mantine/core";
+import { AppShell, Footer, Group, Navbar } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ const Join = () => {
   
     return (
       <>
-      <AppShell className="bg-black max-h-[95vh]"
+      <AppShell className="bg-black min-h-screen"
         navbar={<Navbar className="bg-black max-h-[75vh]" width={{ sm: 500 }} p="md">
           {<>
           <Navbar.Section className="flex flex-col">
@@ -76,15 +76,15 @@ const Join = () => {
           <BackTopButton/>
           </>}
         </Navbar>}
-         header={<DfCHeader/>}>
+         header={<DfCHeader/>}
+         footer={<DfCFooter/>}>
 
          <table className="w-[100%]">
          <div className="bg-black flex flex-col min-h-[75vh]">
-          
-          <div className="text-50px text-center text-orange-200 leading-none tracking-tight">
-            <p className="">You need the following steps to join the DAO. </p>
+          <div className="text-50px text-center text-yellow-300 leading-none tracking-tight">
+            <p>Attention!</p>
+            <p>You need the following steps beforehand</p>
             <div className="p-3"></div>
-            <p className="">Click each step.</p>
           </div>
           <div className="m-1"></div>
           <div className="flex flex-col justify-center m-5 leading-none tracking-tight">
@@ -195,10 +195,8 @@ const Join = () => {
         </div>
             
           </table>
+
         </AppShell>
-        <DfCFooter/>
-
-
 
       </>
     );
