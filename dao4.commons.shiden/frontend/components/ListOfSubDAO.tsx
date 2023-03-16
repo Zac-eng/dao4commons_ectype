@@ -77,17 +77,7 @@ const ListOfSubDAO = () => {
     setShowDonate(_showDonate);
     setShowTokens(_showTokens);
   };
-  // if (DaoNum == 0) {
-  //   return (
-  //     <>
-  //     <div style={{"color":"white", "textAlign":"center"}}>
-  //       <Text style={{"fontFamily":"Gill sans", "fontSize":150}}>
-  //         No DAO exists
-  //       </Text>
-  //     </div>
-  //     </>
-  //   )
-  // } else {
+  
     return (
       <>
         <div className="p-2 flex flex-wrap justify-center mx-1 lg:-mx-4">
@@ -102,9 +92,9 @@ const ListOfSubDAO = () => {
         git  
         </div>
         {showList == true && subDaoList?.length == 0 && (
-          <div className="p-2 flex flex-wrap justify-center mx-1 lg:-mx-4">
+          <div className="text-center">
             <Text style={{"color":"white","fontFamily":"Gill sans", "fontSize":150}}>
-              No DAO exists
+              No DAO Exists
             </Text>
           </div>
         )}

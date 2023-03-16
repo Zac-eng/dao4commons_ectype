@@ -31,7 +31,6 @@ const Home = () => {
             Enpower Your Activities by DAO
           </span>
         </div>
-        <ListOfSubDAO></ListOfSubDAO>
         <div className="p-1 text-center text-25px">
           <button className="m-5 px-7 py-3 border-double border-white border-2 bg-black rounded text-white  hover:border-orange-500">
             <Link href="dao/create/">Create Your DAO</Link>
@@ -43,6 +42,7 @@ const Home = () => {
             <Link href="dao/burn/">Burn Member NFT</Link>
           </button>
         </div>
+        <ListOfSubDAO/>
       </main>
       <DfCFooter/>
       </div>
